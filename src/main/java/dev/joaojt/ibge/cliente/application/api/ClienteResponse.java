@@ -1,5 +1,11 @@
 package dev.joaojt.ibge.cliente.application.api;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.modelmapper.ModelMapper;
+
+import dev.joaojt.ibge.cliente.domain.Cliente;
 import dev.joaojt.ibge.clientetipo.domain.ClienteTipo;
 import dev.joaojt.ibge.consorcio.domain.Consorcio;
 import dev.joaojt.ibge.servidor.domain.Servidor;
@@ -22,13 +28,24 @@ public class ClienteResponse {
     private String aliasBanco;
     private Integer portaFirebirdBanco;
     private ClienteTipo idClienteTipo;
-    private Integer portaTcpA;
-    private Integer portaTcpB;
-    private Integer portaTcpC;
-    private Integer portaTcpD;
-    private Integer portaHttpA;
-    private Integer portaHttpB;
-    private Integer portaHttpC;
-    private Integer portaHttpD;
+    private Integer portaTcpa;
+    private Integer portaTcpb;
+    private Integer portaTcpc;
+    private Integer portaTcpd;
+    private Integer portaHttpa;
+    private Integer portaHttpb;
+    private Integer portaHttpc;
+    private Integer portaHttpd;
 
+	public ClienteResponse(Cliente cliente) {
+		ModelMapper modelMapper = new ModelMapper();
+		modelMapper.map(cliente, this);
+	}
+
+	public static List<ClienteResponse> converter(List<Cliente> clientes) {
+		return clientes.stream()
+				.map(ClienteResponse::new)
+				.collect(Collectors.toList());
+	}    
+	
 }

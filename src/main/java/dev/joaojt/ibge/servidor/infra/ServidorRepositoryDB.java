@@ -37,9 +37,9 @@ public class ServidorRepositoryDB implements ServidorRepository{
 	@Override
 	public List<Servidor> buscaTodosServidor() {
 		log.info("[inicia] ServidorRepositoryDB - buscaTodosServidor");
-		List<Servidor> servidor = servidorRepositoryJpa.findAll();
+		List<Servidor> servidores = servidorRepositoryJpa.findAll();
 		log.info("[finaliza] ServidorRepositoryDB - buscaTodosServidor");		
-		return servidor;
+		return servidores;
 	}
 
 	@Override

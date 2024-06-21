@@ -24,13 +24,13 @@ public class ClienteNovoRequest {
     private String aliasBanco;
     private Integer portaFirebirdBanco;
     private Integer idClienteTipo;
-    private Integer portaTcpA;
-    private Integer portaTcpB;
-    private Integer portaTcpC;
-    private Integer portaTcpD;
-    private Integer portaHttpA;
-    private Integer portaHttpB;
-    private Integer portaHttpC;
-    private Integer portaHttpD;
+    private Integer portaTcpa;
+    private Integer portaTcpb;
+    private Integer portaTcpc;
+    private Integer portaTcpd;
+    private Integer portaHttpa;
+    private Integer portaHttpb;
+    private Integer portaHttpc;
+    private Integer portaHttpd;
 
 }

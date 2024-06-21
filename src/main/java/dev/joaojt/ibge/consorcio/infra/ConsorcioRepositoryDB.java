@@ -43,9 +43,9 @@ public class ConsorcioRepositoryDB implements ConsorcioRepository{
 
 	@Override
 	public List<Consorcio> buscaTodosConsorcio() {
-		log.info("[inicia] ConsorcioRepositoryDB - deletaConsorcio");
+		log.info("[inicia] ConsorcioRepositoryDB - buscaTodosConsorcio");
 		List<Consorcio> consorcios = consorcioRepositoryJpa.findAll();
-		log.info("[finaliza] ConsorcioRepositoryDB - deletaConsorcio");
+		log.info("[finaliza] ConsorcioRepositoryDB - buscaTodosConsorcio");
 		return consorcios;
 	}
 	

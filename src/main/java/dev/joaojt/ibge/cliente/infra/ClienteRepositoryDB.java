@@ -1,5 +1,7 @@
 package dev.joaojt.ibge.cliente.infra;
 
+import java.util.List;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
@@ -52,6 +54,46 @@ public class ClienteRepositoryDB implements ClienteRepository{
 			throw APIException.build(HttpStatus.BAD_REQUEST,
 					"Existe(m) cliente(s) relacionado(s) à este servidor, por isso não é possível excluí-lo.");
 		}
+	}
+
+	@Override
+	public void deletaCliente(Cliente cliente) {
+		log.info("[inicia] ClienteRepositoryDB - deletaCliente");
+		clienteRepositoryJpa.delete(cliente);
+		log.info("[finaliza] ClienteRepositoryDB - deletaCliente");		
+	}
+
+	@Override
+	public Cliente buscaClientePorId(Integer clienteId) {
+		log.info("[inicia] ClienteRepositoryDB - buscaClientePorId");
+		Cliente cliente = clienteRepositoryJpa.findById(clienteId)
+				.orElseThrow(() -> APIException.build(HttpStatus.BAD_REQUEST, "Cliente não encontrado."));
+		log.info("[finaliza] ClienteRepositoryDB - buscaClientePorId");		
+		return cliente;
+	}
+
+	@Override
+	public List<Cliente> buscaTodosCliente() {
+		log.info("[inicia] ClienteRepositoryDB - buscaTodosCliente");
+		List<Cliente> clientes = clienteRepositoryJpa.findAll();
+		log.info("[finaliza] ClienteRepositoryDB - buscaTodosCliente");		
+		return clientes;
+	}
+
+	@Override
+	public List<Cliente> buscaClientesPorIbge(Integer clienteIbge) {
+		log.info("[inicia] ClienteRepositoryDB - buscaClientesPorIbge");
+		List<Cliente> clientes = clienteRepositoryJpa.buscaClientesPorIbge(clienteIbge.toString());
+		log.info("[finaliza] ClienteRepositoryDB - buscaClientesPorIbge");		
+		return clientes;
+	}
+
+	@Override
+	public List<Cliente> buscaClientesPorDescricao(String clienteDescricao) {
+		log.info("[inicia] ClienteRepositoryDB - buscaClientesPorIbge");
+		List<Cliente> clientes = clienteRepositoryJpa.buscaClientesPorDescricao(clienteDescricao);
+		log.info("[finaliza] ClienteRepositoryDB - buscaClientesPorIbge");		
+		return clientes;
 	}
 
 }

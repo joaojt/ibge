@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,7 +28,7 @@ public interface ClienteAPI {
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)
 	void deletaCliente(@PathVariable Integer clienteId);
 	
-	@GetMapping(value = "/busca-cliente-por-id/{clienteId}")
+	@GetMapping(value = "/busca-por-id/{clienteId}")
 	@ResponseStatus(code = HttpStatus.OK)
 	ClienteResponse buscaClientePorId(@PathVariable Integer clienteId);
 	
@@ -35,13 +36,13 @@ public interface ClienteAPI {
 	@ResponseStatus(code = HttpStatus.OK)
 	List<ClienteResponse> buscaTodosCliente();
 	
-	@GetMapping(value = "/busca-clientes-por-ibge/{clienteIbge}")
+	@GetMapping(value = "/busca-por-ibge")
 	@ResponseStatus(code = HttpStatus.OK)
-	List<ClienteResponse> buscaClientesPorIbge(@PathVariable Integer clienteIbge);
+	List<ClienteResponse> buscaClientesPorIbge(@RequestParam Integer clienteIbge);
 	
-	@GetMapping(value = "/busca-clientes-por-descricao/{clienteDescricao}")
+	@GetMapping(value = "/busca-por-descricao")
 	@ResponseStatus(code = HttpStatus.OK)
-	List<ClienteResponse> buscaClientesPorDescricao(@PathVariable String clienteDescricao);
+	List<ClienteResponse> buscaClientesPorDescricao(@RequestParam String clienteDescricao);
 		
 	@PatchMapping(value = "/edita/{clienteId}")
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)

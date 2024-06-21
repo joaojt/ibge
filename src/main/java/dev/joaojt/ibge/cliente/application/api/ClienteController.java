@@ -25,46 +25,46 @@ public class ClienteController implements ClienteAPI{
 	@Override
 	public void deletaCliente(Integer clienteId) {
 		log.info("[inicia] ClienteController - deletaCliente");
-		// TODO Auto-generated method stub
+		clienteService.deletaCliente(clienteId);
 		log.info("[finaliza] ClienteController - deletaCliente");
 	}
 
 	@Override
 	public ClienteResponse buscaClientePorId(Integer clienteId) {
 		log.info("[inicia] ClienteController - buscaClientePorId");
-		// TODO Auto-generated method stub
+		ClienteResponse clienteResponse = clienteService.buscaClientePorId(clienteId);
 		log.info("[finaliza] ClienteController - buscaClientePorId");
-		return null;
+		return clienteResponse;
 	}
 
 	@Override
 	public List<ClienteResponse> buscaTodosCliente() {
-		log.info("[inicia] ClienteController - buscaTodosClientes");
-		// TODO Auto-generated method stub
-		log.info("[finaliza] ClienteController - buscaTodosClientes");
-		return null;
+		log.info("[inicia] ClienteController - buscaTodosCliente");
+		List<ClienteResponse> clientesResponse = clienteService.buscaTodosCliente();
+		log.info("[finaliza] ClienteController - buscaTodosCliente");
+		return clientesResponse;
 	}
 
 	@Override
 	public List<ClienteResponse> buscaClientesPorIbge(Integer clienteIbge) {
 		log.info("[inicia] ClienteController - buscaClientesPorIbge");
-		// TODO Auto-generated method stub
+		List<ClienteResponse> clientesResponse = clienteService.buscaClientesPorIbge(clienteIbge);
 		log.info("[finaliza] ClienteController - buscaClientesPorIbge");
-		return null;
+		return clientesResponse;
 	}
 
 	@Override
 	public List<ClienteResponse> buscaClientesPorDescricao(String clienteDescricao) {
 		log.info("[inicia] ClienteController - buscaClientesPorDescricao");
-		// TODO Auto-generated method stub
+		List<ClienteResponse> clientesResponse = clienteService.buscaClientesPorDescricao(clienteDescricao);
 		log.info("[finaliza] ClienteController - buscaClientesPorDescricao");
-		return null;
+		return clientesResponse;
 	}
 
 	@Override
 	public void editaCliente(Integer clienteId, ClienteEditaRequest clienteEdita) {
 		log.info("[inicia] ClienteController - editaCliente");
-		// TODO Auto-generated method stub
+		clienteService.editaCliente(clienteId, clienteEdita);
 		log.info("[finaliza] ClienteController - editaCliente");
 	}
 
