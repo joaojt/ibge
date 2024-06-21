@@ -31,7 +31,7 @@ public interface ClienteTipoAPI {
 	@ResponseStatus(code = HttpStatus.OK)
 	void editaClienteTipo(@PathVariable Integer clienteTipoId, @RequestBody @Valid ClienteTipoEditaRequest clienteTipoEdita);
 	
-	@GetMapping(value = "/busca/{clienteTipoId}")
+	@GetMapping(value = "/busca-por-id/{clienteTipoId}")
 	@ResponseStatus(code = HttpStatus.OK)
 	ClienteTipoResponse buscaClienteTipoPorId(@PathVariable Integer clienteTipoId);
 	

@@ -24,7 +24,7 @@ public interface ServidorAPI {
 	@ResponseStatus(code = HttpStatus.CREATED)
 	void insereServidor(@RequestBody @Valid ServidorNovoRequest servidorNovo);
 	
-	@GetMapping(value = "/busca/{servidorId}")
+	@GetMapping(value = "/busca-por-id/{servidorId}")
 	@ResponseStatus(code = HttpStatus.OK)
 	ServidorResponse buscaServidorPorId(@PathVariable Integer servidorId);
 	

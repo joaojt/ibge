@@ -32,7 +32,7 @@ public interface ConsorcioAPI {
 	@ResponseStatus(code = HttpStatus.OK)
 	void editaConsorcio(@PathVariable Integer consorcioId, @RequestBody @Valid ConsorcioEditaRequest consorcioEdita);
 	
-	@GetMapping(value = "/busca/{consorcioId}")
+	@GetMapping(value = "/busca-por-id/{consorcioId}")
 	@ResponseStatus(code = HttpStatus.OK)
 	ConsorcioResponse buscaConsorcioPorId(@PathVariable Integer consorcioId);
 	

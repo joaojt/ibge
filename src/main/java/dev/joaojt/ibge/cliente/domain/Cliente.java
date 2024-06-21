@@ -2,14 +2,11 @@ package dev.joaojt.ibge.cliente.domain;
 
 import java.util.Optional;
 
-import org.modelmapper.ModelMapper;
-
 import dev.joaojt.ibge.cliente.application.api.ClienteEditaRequest;
 import dev.joaojt.ibge.cliente.application.api.ClienteNovoRequest;
 import dev.joaojt.ibge.clientetipo.domain.ClienteTipo;
 import dev.joaojt.ibge.consorcio.domain.Consorcio;
 import dev.joaojt.ibge.servidor.domain.Servidor;
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
